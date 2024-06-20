@@ -5,12 +5,12 @@ const cells = document.querySelectorAll('.cell');
 
 let player="X"
 let gameover=false
-cells.forEach(cell=>{
-    cell.addEventListener('click',(s)=>{
-        if (gameover || cell.textContent!=="") {
+cells.forEach(cells=>{
+    cells.addEventListener('click',(s)=>{
+        if (gameover || cells.textContent!=="") {
             return
         } 
-        cell.textContent=player;
+        cells.textContent=player;
         if (game(player)) {
             message()
             gameover = true;
