@@ -1,10 +1,13 @@
 const button = document.querySelector('#restartButton');
 const board = document.querySelector('.board');
 const cells = document.querySelectorAll('.cell');
+const messages = document.querySelector('.message');
+
 
 
 let player="X"
 let gameover=false
+
 cells.forEach(cells=>{
     cells.addEventListener('click',(s)=>{
         if (gameover || cells.textContent!=="") {
@@ -19,6 +22,7 @@ cells.forEach(cells=>{
         }else{
             player=player==="X"?"O":"X"
         }
+
 
     }) 
     
@@ -88,9 +92,13 @@ function checkTie(){
         return cells[index].textContent != "" // Access the cell using its index
     })
 }
-
-cells.forEach(cells => {
-    button.addEventListener('click',function(R){
-        cells.textContent=""
+    button.addEventListener('click',function(r){
+        cells.forEach(cells => {
+            cells.textContent=""
+        });
+        messages.textContent=""
+        gameover=false
+        player="X";
     })
-});
+
+
