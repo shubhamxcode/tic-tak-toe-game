@@ -89,3 +89,8 @@ function checkTie(){
     })
 }
 
+cells.forEach(cells => {
+    button.addEventListener('click',function(R){
+        cells.textContent=""
+    })
+});
